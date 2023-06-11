@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form lay survey khach hang</title>
+</head>
+<body>
+<div>
+<form>
+    <h1>Market Reseach survey</h1>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    <h4>What is your age range?</h4>
+    <select name="age" style = "width:300px">
+        <option value="age">18-24</option>
+        <option value="age">24-35</option>
+        <option value="age">35-50</option>
+        <option value="age">50+</option>
+    </select>
+    <h4>What is your yearly income range?</h4>
+    <select name="money" style = "width:300px">
+        <option value="age">&#65284;0-&#65284;25</option>
+        <option value="age">&#65284;25-&#65284;50</option>
+        <option value="age">&#65284;50-&#65284;100,000</option>
+        <option value="age">&#65284;100,000+</option>
+    </select>
+    <h4>Gender</h4>
+    <input name="geder" type="radio" value="Male"/>Male<br>
+    <input name="geder" type="radio" value="Female"/>Female<br>
+    <input name="geder" type="radio" value="Nonbinary"/>Nonbinary<br>
+    <input name="geder" type="radio" value="Other"/>Other<br>
+    <input type="text" name="text" size="30"/><br>
+    <span>Maximum of 250 characters.</span>
+    <h4>Which of the following products have your purchased in the last 2 months. Please check all that apply</h4>
+    <input type="checkbox" id="product1" name="purchased" value="product1" />
+    <label for="product1">Product 1</label><br>
+    <input type="checkbox" id="product2" name="purchased" value="product2" />
+    <label for="product2">Product 2</label><br>
+    <input type="checkbox" id="product3" name="purchased" value="product3" />
+    <label for="product3">Product 3</label>
+    <h4>How often would you use our new product?</h4>
+    <input name="new product" type="radio" value="daily"/>Daily<br>
+    <input name="new product" type="radio" value="weekly"/>Weekly<br>
+    <input name="new product" type="radio" value="monthly"/>Monthly
+    <h4>What would you pay for the new product.</h4>
+    &#65284;<input type="number" style="width: 45px">.<input type="number" style="width: 15px">
+    <h4>What feature would you like to see in the new product</h4>
+    <textarea rows="8" cols="100"></textarea>
+    <h5><p>Please rate your level of agreement with th following statements.</p></h5>
+    <table  border="">
+        <tr>
+            <th></th>
+            <th width="180px">Strongly Disagree</th>
+            <th width="180px">Disagree</th>
+            <th width="180px">Agree</th>
+            <th width="180px">Strongly Disagree</th>
+        </tr>
+        <tr>
+            <th><h4>Our products are priced fairly.</h4></th>
+            <th><input type="radio" name="num1"><br>1</th>
+            <th><input  type="radio" name="num1"><br>2</th>
+            <th><input type="radio" name="num1"><br>3</th>
+            <th><input type="radio" name="num1"><br>4</th>
+        </tr>
+        <tr>
+            <th><h4>Our product are hight quality.</h4></th>
+            <th><input  type="radio" name="num2"><br>1</th>
+            <th><input  type="radio" name="num2"><br>2</th>
+            <th><input  type="radio" name="num2"><br>3</th>
+            <th><input  type="radio" name="num2"><br>4</th>
+        </tr>
+        <tr>
+            <th>You would recommend our product to a friend or coworker</th>
+            <th><input  type="radio" name="num3"><br>1</th>
+            <th><input  type="radio" name="num3"><br>2</th>
+            <th><input type="radio" name="num3"><br>3</th>
+            <th><input  type="radio" name="num3"><br>4</th>
+        </tr>
+    </table>
+        <p><input type="button" name="submit" value="Đăng ký"></p>
+        <style>
+            .wufoo{
+                font-family: Arial;
+            }
+        </style>
+</form>
+</div>
+</body>
+</html>
