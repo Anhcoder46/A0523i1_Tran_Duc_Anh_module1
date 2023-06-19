@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculator">
+    <form>
+        <table border="">
+            <tr>
+                <td colspan="7"><input type="text" id="input" placeholder="0" readonly></td></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('Rad')">Rad</button></td>
+                <td><button type="button" class="clear" onclick="clearInput()">Clear</button></td>
+                <td><button type="button" class="operator" onclick="addToInput('x!')">x!</button></td>
+                <td><button type="button" class="operator" onclick="addToInput('(')">(</button></td>
+                <td><button type="button" class="operator" onclick="addToInput(')')">)</button></td>
+                <td><button type="button" onclick="addToInput('%')">%</button></td>
+                <td><button type="button" onclick="clearInput()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('Inv')">Inv</button></td>
+                <td><button type="button" onclick="addToInput('sin')">sin</button></td>
+                <td><button type="button" onclick="addToInput('In')">In</button></td>
+                <td><button type="button" onclick="addToInput('7')">7</button></td>
+                <td><button type="button" onclick="addToInput('8')">8</button></td>
+                <td><button type="button" onclick="addToInput('9')">9</button></td>
+                <td><button type="button" onclick="addToInput('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('pi')">pi</button></td>
+                <td><button type="button" onclick="addToInput('cos')">cos</button></td>
+                <td><button type="button" onclick="addToInput('log')">log</button></td>
+                <td><button type="button" onclick="addToInput('4')">4</button></td>
+                <td><button type="button" onclick="addToInput('5')">5</button></td>
+                <td><button type="button" onclick="addToInput('6')">6</button></td>
+                <td><button type="button" onclick="addToInput('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="operator" onclick="addToInput('e')">e</button></td>
+                <td><button type="button" onclick="addToInput('tan')">tan</button></td>
+                <td><button type="button" onclick="addToInput('sqrt')">sqrt</button></td>
+                <td><button type="button" onclick="addToInput('1')">1</button></td>
+                <td><button type="button" onclick="addToInput('2')">2</button></td>
+                <td><button type="button" onclick="addToInput('3')">3</button></td>
+                <td><button type="button" onclick="addToInput('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="operator" onclick="addToInput('Ans')">Ans</button></td>
+                <td><button type="button" onclick="addToInput('EXP')">EXP</button></td>
+                <td><button type="button" onclick="addToInput('x^y')">x^y</button></td>
+                <td><button type="button" class="clear" onclick="clearInput()">0</button></td>
+                <td><button type="button" onclick="addToInput('.')">.</button></td>
+                <td><button type="button" onclick="calculate()">=</button></td>
+                <td><button type="button" onclick="addToInput('+')">+</button></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<script src="may_tinh.js">
+
+</script>
+</body>
+</html>

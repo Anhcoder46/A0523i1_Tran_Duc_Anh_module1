@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chuyen doi</title>
+</head>
+<body>
+<h1>Chuyển đổi tiền tệ</h1>
+<label>From Currency:</label>
+
+<select id="fromCurrency">
+    <option value="VND">Vietnamese Dong (VND)</option>
+    <option value="USD">Dollar (USD)</option>
+</select>
+<br>
+<label>To Currency:</label>
+
+<select id="toCurrency">
+    <option value="USD">Dollar (USD)</option>
+    <option value="VND">Vietnamese Dong (VND)</option>
+</select>
+
+<br>
+<label>Amount:</label>
+<input type="text" id="amount">
+<br>
+<button onclick="convert()">Convert</button>
+<br>
+<label>Result:</label>
+<div id="result"></div>
+
+<script src="chuyen_doi.js">
+
+</script>
+</body>
+</html>
