@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculator">
+    <form>
+        <table border="">
+            <tr>
+                <td colspan="7"><input type="text" id="input" placeholder="0" readonly></td></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('Rad')">Rad</button></td>
+                <td><button type="button" class="clear" onclick="clearInput()">Clear</button></td>
+                <td><button type="button" class="operator" onclick="addToInput('x!')">x!</button></td>
+                <td><button type="button" class="operator" onclick="addToInput('(')">(</button></td>
+                <td><button type="button" class="operator" onclick="addToInput(')')">)</button></td>
+                <td><button type="button" onclick="addToInput('%')">%</button></td>
+                <td><button type="button" onclick="clearInput()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('Inv')">Inv</button></td>
+                <td><button type="button" onclick="addToInput('sin')">sin</button></td>
+                <td><button type="button" onclick="addToInput('In')">In</button></td>
+                <td><button type="button" onclick="addToInput('7')">7</button></td>
+                <td><button type="button" onclick="addToInput('8')">8</button></td>
+                <td><button type="button" onclick="addToInput('9')">9</button></td>
+                <td><button type="button" onclick="addToInput('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="addToInput('pi')">pi</button></td>
+                <td><button type="button" onclick="addToInput('cos')">cos</button></td>
+                <td><button type="button" onclick="addToInput('log')">log</button></td>
+                <td><button type="button" onclick="addToInput('4')">4</button></td>
+                <td><button type="button" onclick="addToInput('5')">5</button></td>
+                <td><button type="button" onclick="addToInput('6')">6</button></td>
+                <td><button type="button" onclick="addToInput('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="operator" onclick="addToInput('e')">e</button></td>
+                <td><button type="button" onclick="addToInput('tan')">tan</button></td>
+                <td><button type="button" onclick="addToInput('sqrt')">sqrt</button></td>
+                <td><button type="button" onclick="addToInput('1')">1</button></td>
+                <td><button type="button" onclick="addToInput('2')">2</button></td>
+                <td><button type="button" onclick="addToInput('3')">3</button></td>
+                <td><button type="button" onclick="addToInput('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="operator" onclick="addToInput('Ans')">Ans</button></td>
+                <td><button type="button" onclick="addToInput('EXP')">EXP</button></td>
+                <td><button type="button" onclick="addToInput('x^y')">x^y</button></td>
+                <td><button type="button" class="clear" onclick="clearInput()">0</button></td>
+                <td><button type="button" onclick="addToInput('.')">.</button></td>
+                <td><button type="button" onclick="calculate()">=</button></td>
+                <td><button type="button" onclick="addToInput('+')">+</button></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<script>
+    function addToInput(val) {
+        var input = document.getElementById("input");
+        var lastChar = input.value.slice(-1);
+
+        // Append the value to the input field
+        if (val === "pi" || val === "e") {
+            input.value += Math[val];
+        } else if (/[+\-*\/\(%\^!√)]/.test(lastChar) || input.value === "") {
+            // Do not add operator to empty input or after an operator or (
+            if (/[+\-*\/\(%\^!√]/.test(val)) {
+                return;
+            }
+            // Add ( after sqrt
+            if (val === "(" && lastChar === "√") {
+                input.value += "*(";
+                return;
+            }
+        }
+        input.value += val;
+    }
+
+    function clearInput() {
+        document.getElementById("input").value = "";
+    }
+
+    function calculate() {
+        var input = document.getElementById("input");
+        var expr = input.value;
+        var result;
+
+        try {
+            // Use eval() to evaluate the expression
+            result = eval(expr);
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                // Handle syntax errors
+                result = "Syntax Error";
+            } else {
+                // Handle other errors
+                result = "Error";
+            }
+        }
+
+        // Display the result
+        input.value = result;
+    }
+</script>
+</body>
+</html>

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Tính chu vi hình tròn</title>
 </head>
 <body>
 <h1>Tính chu vi hình tròn</h1>
-<label>Chu_vi</label>
+<label>Bán kính:</label>
 <input type="number" id="ban_kinh"/><br><br/>
 <button onclick="tinhChuVi()">Tính chu vi</button><br><br/>
-<label>Chu vi: </label>
+<label>Chu vi:</label>
 <span id="chu_vi"></span>
-<script src="hinh_tron.js">
-
+<script>
+    function tinhChuVi() {
+        let r = parseFloat(document.getElementById("ban_kinh").value);
+        let chu_vi = 2 * Math.PI * r;
+        document.getElementById("chu_vi").innerHTML = chu_vi.toFixed(2);
+    }
+</script>
 </body>
 </html>

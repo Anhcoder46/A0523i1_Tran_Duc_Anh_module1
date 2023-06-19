@@ -10,8 +10,13 @@
 <button onclick="tinhDienTich()">Tính diện tích</button><br><br/>
 <label>Diện tích:</label>
 <span id="dien_tich"></span>
-<script src="ht.js">
-<!--Nhúng js qua-->
+<script>
+    function tinhDienTich() {
+        function tinhDienTich() {
+            let r = parseFloat(document.getElementById("ban_kinh").value);
+            let dien_tich = Math.PI * r * r;
+            document.getElementById("dien_tich").innerHTML = dien_tich.toFixed(2);
+        }
 </script>
 </body>
 </html>
