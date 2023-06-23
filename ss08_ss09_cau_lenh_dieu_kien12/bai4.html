@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h1>Tím số lớn nhất trong 3 số</h1>
+<label for="a">Nhập a: </label>
+<input type="number" id="a">
+<label for="b">Nhập b: </label>
+<input type="number" id="b">
+<label for="c">Nhập c: </label>
+<input type="number" id="c">
+<br><br/>
+<button onclick="Max()">Tìm giá trị lớn nhất</button>
+<br><br/>
+<span id="result"></span>
+<script>
+    function Max() {
+        let a = parseInt(document.getElementById('a').value);
+        let b = parseInt(document.getElementById('b').value);
+        let c = parseInt(document.getElementById('c').value);
+        let max = a;
+        if (max < b) {
+            max = b;
+        }
+        if(max < c) {
+            max = c;
+        }
+        document.getElementById('result').innerHTML = "Gía trị lớn nhất là: " + max;
+    }
+</script>
+</body>
+</html>

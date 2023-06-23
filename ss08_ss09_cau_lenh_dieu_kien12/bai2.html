@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<h1>Kiểm tra học sinh đủ tuổi vào lớp 10 hay không ?</h1>
+<label for="age">Nhập tuổi của bạn: </label>
+<input type="number" id="age">
+<br><br/>
+<button onclick="kiemTra()">Kiểm tra</button>
+<br><br/>
+<span id="result"></span>
+<script>
+    function kiemTra() {
+        let age = parseInt(document.getElementById('age').value)
+        if (age >= 16) {
+            document.getElementById('result').innerHTML = "Sinh viên đủ điều kiện vào lớp 10";
+        }
+        else {
+            document.getElementById('result').innerHTML = " Sinh viên không đủ điều kiện vào lớp 10";
+        }
+    }
+</script>
+</body>
+</html>
