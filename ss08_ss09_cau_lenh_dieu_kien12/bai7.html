@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài 7</title>
+</head>
+<body>
+<h1>Tính cước điện thoại cho hộ gia đinh</h1>
+
+<label for="phutGoi">Nhấp số phút gọi: </label>
+<input type="number" id="phutGoi">
+<br><br>
+<button onclick="tinhTienCuocGoi()">Tính cước</button>
+<br><br>
+<p id="result"></p>
+<script>
+    function tinhTienCuocGoi() {
+        let phutGoi = document.getElementById('phutGoi').value;
+        let tongTien = 0;
+        if (phutGoi < 5) {
+            tongTien = phutGoi * 800;
+        } else if (phutGoi < 10) {
+            tongTien = 5 * 800 + (phutGoi - 5) * 1000;
+        } else {
+            tongTien = 5 * 800 + 5 * 1000 + (phutGoi - 10)*1200;
+        }
+        document.getElementById('result').innerHTML = "Gía cước cuộc gọi là: " + tongTien + "đ";
+    }
+</script>
+</body>
+</html>
