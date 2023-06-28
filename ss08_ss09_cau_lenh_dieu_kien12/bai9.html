@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<h1>Chuyển đổi mét sang feet</h1>
+<label>Nhập số mét: <input type="number" id="meter"></label>
+<button onclick="chuyenDoi()">Chuyển đổi</button>
+<p id="result"></p>
+
+<script>
+    function chuyenDoi() {
+        let meter = parseFloat(document.getElementById("meter").value);
+        let feet = meter * 3.2808;
+        document.getElementById("result").innerHTML = meter + " mét = " + feet + " feet";
+    }
+</script>
+</body>
+</html>

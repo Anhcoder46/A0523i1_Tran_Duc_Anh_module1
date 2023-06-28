@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<label>Nhập hệ số bậc 2 a: <input type="number" id="hsA"></label>
+<label>Nhập hệ số bậc 1 b: <input type="number" id="hsB"></label>
+<label>Nhập hằng số tự do c: <input type="number" id="hsC"></label>
+<button onclick="giaiPhuongTrìnhBacHai()">Giải</button>
+<p id="ketQua"></p>
+
+<script>
+    function giaiPhuongTrinhBacHai() {
+        let hsA = parseFloat(document.getElementById("hsA").value);
+        let hsB = parseFloat(document.getElementById("hsB").value);
+        let hsC = parseFloat(document.getElementById("hsC").value);
+
+        if (hsA == 0) {
+            if (hsB == 0 && hsC == 0) {
+                document.getElementById("ketQua").innerHTML = "Phương trình vô số nghiệm";
+            } else if (hsB == 0 && hsC != 0) {
+                document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+            } else {
+                let x = -hsC / hsB;
+                document.getElementById("ketQua").innerHTML = "Phương trình có nghiệm duy nhất: " + x;
+            }
+        } else {
+            let delta = hsB * hsB - 4 * hsA * hsC;
+            if (delta < 0) {
+                document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+            } else if (delta == 0) {
+                let x = -hsB / (2 * hsA);
+                document.getElementById("ketQua").innerHTML = "Phương trình có nghiệm kép: " + x;
+            } else {
+                let x1 = (-hsB + Math.sqrt(delta)) / (2 * hsA);
+                let x2 = (-hsB - Math.sqrt(delta)) / (2 * hsA);
+                document.getElementById("ketQua").innerHTML = "Phương trình có 2 nghiệm phân biệt: x1 = " + x1 + ", x2 = " + x2;
+            }
+        }
+    }
+</script>
+</body>
+</html>

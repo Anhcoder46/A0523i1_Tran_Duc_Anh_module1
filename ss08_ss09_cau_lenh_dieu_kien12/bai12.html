@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<label>Nhập chiều dài cạnh thứ nhất của tam giác: <input type="number" id="canhThuNhat"></label><br><br/>
+<label>Nhập chiều dài cạnh thứ hai của tam giác: <input type="number" id="canhThuHai"></label><br><br/>
+<button onclick="tinhDienTichTamGiac()">Tính diện tích</button><br><br/>
+<p id="ketQua"></p>
+
+<script>
+    function tinhDienTichTamGiac() {
+        let canhThuNhat = parseFloat(document.getElementById("canhThuNhat").value);
+        let canhThuHai = parseFloat(document.getElementById("canhThuHai").value);
+        let dienTich = (canhThuNhat * canhThuHai) / 2;
+        document.getElementById("ketQua").innerHTML = "Diện tích tam giác vuông là: " + dienTich;
+    }
+</script>
+</body>
+</html>

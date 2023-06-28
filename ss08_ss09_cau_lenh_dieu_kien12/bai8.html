@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h1>Chuyển đổi độ C sang F</h1>
+<label>Độ C: </label>
+<input type="number" id="doC">
+<br><br/>
+<button onclick="doiDoC()">Chuyển đổi</button><br>
+<br><label>Độ F: </label>
+<span id="doF"></span>
+<script>
+    function doiDoC() {
+        let doC = parseFloat(document.getElementById("doC").value);
+        let doF = (doC * 9) / 5 + 32;
+        document.getElementById("doF").innerHTML = doF.toFixed(2);
+    }
+</script>
+</body>
+</html>

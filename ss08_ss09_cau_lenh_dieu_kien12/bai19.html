@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<label>Nhập số tiền gửi ban đầu (VNĐ): <input type="number" id="soTien"></label>
+<label>Nhập số tháng gửi: <input type="number" id="soThang"></label>
+<label>Nhập lãi suất hàng tháng (%): <input type="number" id="laiSuat"></label>
+<button onclick="tinhLai()">Tính lãi</button>
+<p id="ketQua"></p>
+
+<script>
+    function tinhLai() {
+        let soTien = parseFloat(document.getElementById("soTien").value);
+        let soThang = parseInt(document.getElementById("soThang").value);
+        let laiSuat = parseFloat(document.getElementById("laiSuat").value) / 100;
+        let lai = 0;
+        let tongTien = soTien;
+
+        for (let i = 1; i <= soThang; i++) {
+            lai = tongTien * laiSuat;
+            tongTien += lai;
+        }
+
+        document.getElementById("ketQua").innerHTML = "Sau " + soThang + " tháng, số tiền của bạn sẽ là: " + tongTien.toLocaleString() + " VNĐ";
+    }
+</script>
+</body>
+</html>

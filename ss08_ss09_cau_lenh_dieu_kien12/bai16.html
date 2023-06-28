@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<label>Nhập cạnh thứ nhất: <input type="number" id="canhThuNhat"></label>
+<label>Nhập cạnh thứ hai: <input type="number" id="canhThuHai"></label>
+<label>Nhập cạnh thứ ba: <input type="number" id="canhThuBa"></label>
+<button onclick="kiemTraTamGiac()">Kiểm tra</button>
+<p id="ketQua"></p>
+
+<script>
+    function kiemTraTamGiac() {
+        let canhThuNhat = parseFloat(document.getElementById("canhThuNhat").value);
+        let canhThuHai = parseFloat(document.getElementById("canhThuHai").value);
+        let canhThuBa = parseFloat(document.getElementById("canhThuBa").value);
+
+        if (canhThuNhat > 0 && canhThuHai > 0 && canhThuBa > 0) {
+            if (canhThuNhat + canhThuHai > canhThuBa && canhThuHai + canhThuBa > canhThuNhat && canhThuNhat + canhThuBa > canhThuHai) {
+                document.getElementById("ketQua").innerHTML = "Ba cạnh " + canhThuNhat + ", " + canhThuHai + ", " + canhThuBa + " là cạnh của m
+</body>
+</html>
