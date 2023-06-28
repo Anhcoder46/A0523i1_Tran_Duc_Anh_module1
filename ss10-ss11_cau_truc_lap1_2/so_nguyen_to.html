@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>số nguyên tố</title>
+    <script>
+        function soNguyenTo(n) {
+            if (n <= 1) {
+                return false;
+            }
+            for (var i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function displayPrimes() {
+            var numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần in ra:"));
+            var count = 0;
+            var N = 2;
+
+            while (count < numbers) {
+                if (soNguyenTo(N)) {
+                    document.write(+ N + " ; ");
+                    count++;
+                }
+                N++;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Hiển thị số nguyên tố</h1>
+<button onclick="displayPrimes()">Hiển thị</button>
+</body>
+</html>
