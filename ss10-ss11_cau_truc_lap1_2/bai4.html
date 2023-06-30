@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<script>
+    let num1 = 0;
+    let num2 = 1;
+    let fibonacci;
+    while (true) {
+        fibonacci = num1 + num2;
+        if (fibonacci % 5 === 0) {
+            document.write(fibonacci);
+            break;
+        }
+        num1 = num2;
+        num2 = fibonacci;
+    }
+</script>
+
+</body>
+</html>

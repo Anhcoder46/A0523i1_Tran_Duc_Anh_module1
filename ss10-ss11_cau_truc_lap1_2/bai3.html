@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<button onclick="disPlay()">Hiển thị</button>
+<script>
+    function disPlay() {
+        let num1 = 0;
+        let num2 = 1;
+        let next;
+        document.write(num1 + '<br/>');
+        document.write(num2 + '<br/>');
+        for (let i = 3; i <= 20; i++) {
+            next = num1 + num2;
+            document.write(next + '<br/>');
+            num1 = num2;
+            num2 = next;
+        }
+    }
+</script>
+</body>
+</html>

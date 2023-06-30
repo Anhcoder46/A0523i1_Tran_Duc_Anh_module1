@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tính giai thừa của một số nguyên dương</title>
+    <script>
+        function tinhGiaiThua() {
+            var n = parseInt(document.getElementById("input").value);
+            var giaiThua = 1;
+            for (var i = 1; i <= n; i++) {
+                giaiThua *= i;
+            }
+            document.getElementById("ketqua").innerHTML = "Giai thừa của " + n + " là: " + giaiThua;
+        }
+    </script>
+</head>
+<body>
+<h2>Tính giai thừa của một số nguyên dương</h2>
+<p>Nhập số nguyên dương: </p>
+<input type="number" id="input">
+<button onclick="tinhGiaiThua()">Tính giai thừa</button>
+<p id="ketqua"></p>
+</body>
+</html>

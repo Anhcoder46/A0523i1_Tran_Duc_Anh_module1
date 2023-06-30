@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="playGame()">Play</button>
+<script>
+    function playGame() {
+        let canDuoi = +prompt("Nhap can duoi");
+        let canTren = +prompt("Nhap can tren");
+        let random = Math.round(Math.random() * (canTren - canDuoi) + canDuoi);
+        console.log(random)
+        let soLan = 1;
+        do {
+            let so = +prompt("Nhap so ma ban doan: ")
+            if(so === random){
+                alert("Ban da trung so");
+                break;
+            } else if (so < random) {
+                alert("So ban nhap NHO hon ket qua dung.")
+            } else {
+                alert("So ban nhap LON hon ket qua dung.")
+            }
+            if(soLan === 3){
+                alert("Ban da het luot doan so.")
+            }
+            soLan++;
+        } while (soLan <= 3)
+    }
+</script>
+</body>
+</html>
