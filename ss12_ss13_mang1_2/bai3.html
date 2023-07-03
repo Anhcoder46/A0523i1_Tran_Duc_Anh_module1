@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài tập 3</title>
+</head>
+<body>
+<script>
+
+    var arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    var sum = 0;
+    var max = arr[0];
+
+    for(var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    var avg = sum/arr.length;
+
+    document.write("Giá trị lớn nhất trong mảng là " + max + "<br>");
+    document.write("Giá trị trung bình của các phần tử trong mảng là " + avg);
+</script>
+</body>
+</html>
