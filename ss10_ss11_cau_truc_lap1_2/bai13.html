@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tính lãi ngân hàng</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Tính lãi ngân hàng</h1>
+<label for="principal">Số tiền ban đầu: </label>
+<input type="number" id="principal" name="principal"><br><br>
+<label for="months">Số tháng cho vay: </label>
+<input type="number" id="months" name="months"><br><br>
+<label for="interest">Lãi xuất hàng tháng (%): </label>
+<input type="number" id="interest" name="interest"><br><br>
+<button onclick="tinhLai()">Tính lãi</button><br><br>
+<p id="result"></p>
+
+<script>
+    function tinhLai() {
+        var principal = document.getElementById("principal").value;
+        var months = document.getElementById("months").value;
+        var interest = document.getElementById("interest").value;
+
+        var monthlyInterestRate = interest / 100 / 12;
+        var monthlyPayment = principal * monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, months)) / (Math.pow(1 + monthlyInterestRate, months) - 1);
+        var totalPayment = monthlyPayment * months;
+        var totalInterest = totalPayment - principal;
+
+        document.getElementById("result").innerHTML = "Tổng lãi: " + totalInterest.toFixed(2) + " đồng";
+    }
+</script>
+</body>
+</html>
