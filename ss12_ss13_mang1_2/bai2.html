@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài tập 2</title>
+</head>
+<body>
+<script>
+
+    var arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    var max = arr[0];
+    var index = 0;
+
+    for(var i = 1; i < arr.length; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+            index = i;
+        }
+    }
+
+    document.write("Phần tử có giá trị lớn nhất trong mảng là " + max + " và nằm ở vị trí thứ " + index + ".");
+</script>
+</body>
+</html>
