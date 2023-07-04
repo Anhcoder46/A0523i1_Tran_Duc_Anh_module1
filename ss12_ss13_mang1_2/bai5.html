@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài tập 5</title>
+</head>
+<body>
+<script>
+
+    var str = "-1, -2, -3, -4, -5";
+
+    var count = 0;
+    for(var i = 0; i < str.length; i++) {
+        if(str[i] === '-') {
+            if(!isNaN(str[i+1]) && parseInt(str[i+1]) % 1 === 0) {
+                count++;
+            }
+        }
+    }
+
+    document.write("Số lượng số nguyên âm trong chuỗi là: " + count);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài tập 7</title>
+</head>
+<body>
+
+<script>
+
+    var arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    var v = 10;
+    var inArray = false;
+
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === v) {
+            inArray = true;
+            for (var j = i; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            // Gán 0 cho phần tử cuối cùng của mảng
+            arr[arr.length - 1] = 0;
+            break;
+        }
+    }
+
+    if (inArray) {
+        document.write("V nằm trong mảng <br>");
+        document.write("Mảng sau khi xoá V là: " + arr);
+    } else {
+        document.write("V không nằm trong mảng");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bài tập 6</title>
+</head>
+<body>
+	<script>
+
+		var arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+		var v = 10;
+		var isInArray = false;
+
+		for(var i = 0; i < arr.length; i++) {
+			if(arr[i] === v) {
+				isInArray = true;
+				break;
+			}
+		}
+
+		if(isInArray) {
+			document.write("V nằm trong mảng");
+		} else {
+			document.write("V không nằm trong mảng");
+		}
+	</script>
+</body>
+</html>
