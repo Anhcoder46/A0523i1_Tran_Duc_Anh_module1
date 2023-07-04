@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minArrayIndex(arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+        let minIndex = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        if (arr[minIndex] >= 0) {
+            return minIndex;
+        } else {
+            return -1;
+        }
+    }
+</script>
+</body>
+</html>
