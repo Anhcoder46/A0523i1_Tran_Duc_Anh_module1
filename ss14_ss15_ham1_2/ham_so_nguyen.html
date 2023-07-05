@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<button onclick="checkPrime()">Kiểm tra số nguyên tố</button>
+<script>
+
+    function isPrime(number) {
+
+        // Nếu số đưa vào nhỏ hơn 2 thì không là số nguyên tố
+        if (number < 2) {
+            return false;
+        }
+        // Kiểm tra số đưa vào có chia hết cho các số từ 2 đến căn bậc hai của số đó hay không
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+
+        // Nếu không chia hết cho bất kỳ số nào từ 2 đến căn bậc hai của số đó thì là số nguyên tố
+        return true;
+    }
+    function checkPrime() {
+        let userInput = prompt("Nhập số cần kiểm tra: ");
+
+        if (isPrime(userInput)) {
+            alert(`${userInput} là số nguyên tố`);
+        } else {
+            alert(`${userInput} không là số nguyên tố`);
+        }
+    }
+</script>
+</body>
+</html>
