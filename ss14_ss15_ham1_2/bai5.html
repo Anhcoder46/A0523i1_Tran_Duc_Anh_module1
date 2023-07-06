@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tìm chòm sao</title>
+</head>
+<body>
+<div id="result"></div>
+
+<script>
+    const stars = ['Bắc đẩu', 'Kim ngưu', 'Thiên tân', 'Chức nữ', 'Ngưu lang', 'Đại hùng', 'Sư tử'];
+    const constellations = ['Bắc đẩu', 'Kim ngưu', 'Thiên tân', 'Chức nữ', 'Ngưu lang', 'Đại hùng', 'Sư tử'];
+
+    function findConstellation(ngoiSao) {
+        if (!ngoiSao) {
+            return 'Vui lòng nhập tên ngôi sao!';
+        }
+        for (let i = 0; i < stars.length; i++) {
+            if (stars[i] === ngoiSao) {
+                return constellations[i];
+            }
+        }
+        return 'Không tìm thấy ngôi sao nào có tên là ' + ngoiSao;
+    }
+
+    const ngoiSao = prompt('Nhập tên của ngôi sao:');
+    const ketQua = findConstellation(ngoiSao);
+    document.getElementById('result').innerHTML = 'Ngôi sao ' + ngoiSao + ' thuộc chòm sao ' + ketQua;
+</script>
+</body>
+</html>
