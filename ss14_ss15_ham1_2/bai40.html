@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự số</title>
+    <script>
+        function isNumber(char) {
+            return !isNaN(char);
+        }
+
+        function check() {
+            let char = document.getElementById("char").value;
+            let result = isNumber(char);
+            if (result) {
+                document.getElementById("output").innerHTML = "Ký tự " + char + " là số.";
+            } else {
+                document.getElementById("output").innerHTML = "Ký tự " + char + " không phải là số.";
+            }
+        }
+    </script>
+</head>
+<body>
+<label for="char">Nhập ký tự:</label>
+<input type="text" id="char">
+<button onclick="check()">Kiểm tra</button>
+<p id="output"></p>
+</body>
+</html>

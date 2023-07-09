@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Số lớn nhất</title>
+    <script>
+        function findMax(a, b, c) {
+            let max = a;
+            if (b > max) {
+                max = b;
+            }
+            if (c > max) {
+                max = c;
+            }
+            return max;
+        }
+
+        function calculate() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = parseInt(document.getElementById("c").value);
+            let result = findMax(a, b, c);
+            document.getElementById("output").innerHTML = "Số lớn nhất là: " + result;
+        }
+    </script>
+</head>
+<body>
+<label for="a">Nhập số thứ nhất:</label>
+<input type="number" id="a">
+<label for="b">Nhập số thứ hai:</label>
+<input type="number" id="b">
+<label for="c">Nhập số thứ ba:</label>
+<input type="number" id="c">
+<button onclick="calculate()">Tìm số lớn nhất</button>
+<p id="output"></p>
+</body>
+</html>

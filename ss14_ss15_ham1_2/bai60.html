@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên dương</title>
+    <script>
+        function isPositiveInteger(num) {
+            return Number.isInteger(num) && num > 0;
+        }
+
+        function check() {
+            let num = parseFloat(document.getElementById("num").value);
+            let result = isPositiveInteger(num);
+            if (result) {
+                document.getElementById("output").innerHTML = "Số " + num + " là nguyên dương.";
+            } else {
+                document.getElementById("output").innerHTML = "Số " + num + " không phải là nguyên dương.";
+            }
+        }
+    </script>
+</head>
+<body>
+<label for="num">Nhập số:</label>
+<input type="number" id="num">
+<button onclick="check()">Kiểm tra</button>
+<p id="output"></p>
+</body>
+</html>

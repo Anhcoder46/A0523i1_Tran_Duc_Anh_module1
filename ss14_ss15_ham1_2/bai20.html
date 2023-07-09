@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình tròn</title>
+    <script>
+        function circleArea(radius) {
+            return Math.PI * radius * radius;
+        }
+
+        function circlePerimeter(radius) {
+            return 2 * Math.PI * radius;
+        }
+
+        function calculate() {
+            let radius = parseFloat(document.getElementById("radius").value);
+            let area = circleArea(radius);
+            let perimeter = circlePerimeter(radius);
+            document.getElementById("area").innerHTML = "Diện tích hình tròn: " + area.toFixed(2);
+            document.getElementById("perimeter").innerHTML = "Chu vi hình tròn: " + perimeter.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+<label for="radius">Nhập bán kính:</label>
+<input type="number" id="radius">
+<button onclick="calculate()">Tính</button>
+<p id="area"></p>
+<p id="perimeter"></p>
+</body>
+</html>
