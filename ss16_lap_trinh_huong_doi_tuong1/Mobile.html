@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobile</title>
+</head>
+<body>
+<p id="oppo"></p>
+<p id="iphone"></p>
+
+<script>
+    // Định nghĩa lớp Mobile
+    class Mobile {
+        constructor() {
+            this.battery = 100;
+            this.isPowerOn = false;
+            this.drafts = "";
+            this.inbox = [];
+            this.sent = [];
+        }
+
+        checkPower() {
+            return this.isPowerOn;
+        }
+
+        powerOn() {
+            this.isPowerOn = true;
+            this.battery--;
+        }
+
+        powerOff() {
+            this.isPowerOn = false;
+        }
+
+        chargeBattery() {
+            this.battery = 100;
+        }
+
+        writeDrafts(message) {
+            if (this.checkPower()) {
+                this.drafts = message;
+                this.battery--;
+            }
+        }
+
+        receiveMessage(message) {
+            if (this.checkPower()) {
+                this.inbox.push(message);
+                this.battery--;
+            }
+        }
+
+        sendMessage(message, mobile) {
+            if (this.checkPower()) {
+                mobile.receiveMessage(message);
+                this.sent.push(message);
+                this.battery--;
+            }
+        }
+
+        readInbox() {
+            if (this.checkPower()) {
+                let inboxMessages = "";
+                for (let i = 0; i < this.inbox.length; i++) {
+                    inboxMessages += this.inbox[i] + "<br>";
+                }
+                this.battery--;
+                return inboxMessages;
+            }
+        }
+
+        readSent() {
+            if (this.checkPower()) {
+                let sentMessages = "";
+                for (let i = 0; i < this.sent.length; i++) {
+                    sentMessages += this.sent[i] + "<br>";
+                }
+                this.battery--;
+                return sentMessages;
+            }
+        }
+    }
+
+    // Khởi tạo đối tượng kiểu Mobile
+    let oppo = new Mobile();
+    let iphone = new Mobile();
+
+    // Oppo soạn và gửi tin nhắn cho iPhone
+    oppo.powerOn();
+    oppo.writeDrafts("Hello iPhone!");
+    oppo.sendMessage(oppo.drafts, iphone);
+
+    // iPhone kiểm tra inbox và hiển thị tin nhắn
+    iphone.powerOn();
+    document.getElementById("oppo").innerHTML = "Tin nhắn của Oppo: " + oppo.readSent();
+    document.getElementById("iphone").innerHTML = "Tin nhắn của iPhone: " + iphone.readInbox();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="200"></canvas>
+<p id="dienTich"></p>
+<p id="chuVi"></p>
+
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        get dienTich() {
+            return this.width * this.height;
+        }
+
+        get chuVi() {
+            return 2 * (this.width + this.height);
+        }
+
+        draw() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(10, 10, this.width, this.height);
+        }
+
+        resize(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+    }
+    let rect = new Rectangle(500, 1000);
+    rect.draw();
+    rect.resize(50, 100);
+    document.getElementById("dienTich").innerHTML = "Diện tích: " + rect.dienTich;
+    document.getElementById("chuVi").innerHTML = "Chu vi: " + rect.chuVi;
+</script>
+</body>
+</html>
